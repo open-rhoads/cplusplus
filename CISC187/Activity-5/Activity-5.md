@@ -31,3 +31,5 @@ This project demonstrates a simple has table with an unordered map. It also comp
     cout << "The hash value of my name - " << key << " - is: " << hash_value << endl;
 ```
 ## Number 3
+Below is my diagram of how tombstones create inefficiencies:
+[Lab 5.pdf](https://github.com/user-attachments/files/19153593/Lab.5.pdf)
