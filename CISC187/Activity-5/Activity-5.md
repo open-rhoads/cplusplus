@@ -17,6 +17,7 @@ This project demonstrates a simple has table with an unordered map. It also comp
     } else {
         cout << "The key was not found.\n";
     }
+```
 ## Number 2
 ```c++
     // Now let's use the default hash function to compute the hash value of my name as a key
@@ -28,4 +29,5 @@ This project demonstrates a simple has table with an unordered map. It also comp
     size_t hash_value = hash_object(key);
     // output the hash value
     cout << "The hash value of my name - " << key << " - is: " << hash_value << endl;
+```
 ## Number 3
