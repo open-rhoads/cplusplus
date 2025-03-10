@@ -695,7 +695,7 @@ w\:* {behavior:url(#default#VML);}
  </w:LatentStyles>
 </xml><![endif]-->
 
-<![endif]--><!--[if gte mso 9]><xml>
+<!--[if gte mso 9]><xml>
  <o:shapedefaults v:ext="edit" spidmax="1026"/>
 </xml><![endif]--><!--[if gte mso 9]><xml>
  <o:shapelayout v:ext="edit">
@@ -2711,4 +2711,6 @@ tombstones is crucial for efficiency.</p>
 </body>
 
 </html>
+## Assignment Video
+Here is my video explaining this assignment:
 
