@@ -695,7 +695,7 @@ w\:* {behavior:url(#default#VML);}
  </w:LatentStyles>
 </xml><![endif]-->
 
-<!--[if gte mso 9]><xml>
+<![endif]--><!--[if gte mso 9]><xml>
  <o:shapedefaults v:ext="edit" spidmax="1026"/>
 </xml><![endif]--><!--[if gte mso 9]><xml>
  <o:shapelayout v:ext="edit">
