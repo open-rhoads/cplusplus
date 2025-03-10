@@ -1,5 +1,8 @@
 # Hash Table
 This project demonstrates a simple has table with an unordered map. It also computes the hash value of a string key with the default hash function.
+## Assignment Video
+Here is my video explaining this assignment:
+
 ## Number 1
 ```c++
     // the following array would take O(N) or O(logN) steps to search using linear or binary search, respectively
@@ -2711,6 +2714,5 @@ tombstones is crucial for efficiency.</p>
 </body>
 
 </html>
-## Assignment Video
-Here is my video explaining this assignment:
+
 
