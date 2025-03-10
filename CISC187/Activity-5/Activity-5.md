@@ -1,7 +1,7 @@
 # Hash Table
 This project demonstrates a simple has table with an unordered map. It also computes the hash value of a string key with the default hash function.
 ## Assignment Video
-Here is my video explaining this assignment:
+Here is my video explaining this assignment: https://youtu.be/Lyd0vmmLRhA 
 
 ## Number 1
 ```c++
