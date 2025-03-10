@@ -31,9 +31,9 @@ This project demonstrates a simple has table with an unordered map. It also comp
     cout << "The hash value of my name - " << key << " - is: " << hash_value << endl;
 ```
 ## Number 3
-Here is my diagram of how tombstones create inefficiencies:
+Here is my diagram of how tombstones create inefficiencies in PDF and rendered HTML:
 [Lab 5.pdf](https://github.com/user-attachments/files/19153593/Lab.5.pdf)
-[Uploading Lab 5.html…]()<html xmlns:v="urn:schemas-microsoft-com:vml"
+<html xmlns:v="urn:schemas-microsoft-com:vml"
 xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:w="urn:schemas-microsoft-com:office:word"
 xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
