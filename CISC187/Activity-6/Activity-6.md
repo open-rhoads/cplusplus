@@ -1,12 +1,10 @@
 # Stacks and Queues
 
-## 1) Begin with an Initially empty stack S of size 6:
-1	2	3	4	5	6
-					
+## 1) Begin with an Initially empty stack S of size 6:					
 ![image](https://github.com/user-attachments/assets/d72a57bc-eb00-40d2-96aa-bcb83e23aaf8)
 
-
-### a. PUSH(S,4)
+### a. PUSH(S,4)					
+![image](https://github.com/user-attachments/assets/e2223cc9-8d5b-444f-8602-6d3349f5aa70)
 
 ### b. PUSH(S,1)
 
