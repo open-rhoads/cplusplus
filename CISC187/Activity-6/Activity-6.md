@@ -1,7 +1,10 @@
 # Stacks and Queues
 
 ## 1) Begin with an Initially empty stack S of size 6:
-![image](https://github.com/user-attachments/assets/37c4ba8f-a5c3-46b8-90b3-dfa8a1a85a09)
+1	2	3	4	5	6
+					
+![image](https://github.com/user-attachments/assets/d72a57bc-eb00-40d2-96aa-bcb83e23aaf8)
+
 
 ### a. PUSH(S,4)
 
