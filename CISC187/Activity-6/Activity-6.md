@@ -1,6 +1,6 @@
 # Stacks and Queues
 ## Assignment Video
-Here is my video explaining this assignment:
+Here is my video explaining this assignment: https://youtu.be/VLUP7usRtIM 
 ## 1) Begin with an Initially empty stack S of size 6:					
 ![image](https://github.com/user-attachments/assets/34401fab-3f33-419d-b14d-f9a21e28bf93)
 
