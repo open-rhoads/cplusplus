@@ -3,16 +3,20 @@
 ## 1) Begin with an Initially empty stack S of size 6:					
 ![image](https://github.com/user-attachments/assets/d72a57bc-eb00-40d2-96aa-bcb83e23aaf8)
 
-### a. PUSH(S,4)					
-![image](https://github.com/user-attachments/assets/e2223cc9-8d5b-444f-8602-6d3349f5aa70)
+### a. PUSH(S,4)									
+![image](https://github.com/user-attachments/assets/778656bd-15c5-4dc9-9b54-36dd698ec9ae)
 
 ### b. PUSH(S,1)
+![image](https://github.com/user-attachments/assets/51c572a8-2b5d-412d-b12d-dd7008e6dc69)
 
 ### c. PUSH(S,3)
+![image](https://github.com/user-attachments/assets/c27be270-5eb9-4939-9089-9df68857cd44)
 
-### d. POP(S)
+### d. POP(S)			
+![image](https://github.com/user-attachments/assets/0e1bf87c-908d-47c4-a06f-b53c1d047f23)
 
-### e. PUSH(S,8)
+### e. PUSH(S,8)			
+![image](https://github.com/user-attachments/assets/714bcad1-3bb2-4ae1-9790-470569b796bb)
 
 ### f. POP(S)
 
