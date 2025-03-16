@@ -18,23 +18,30 @@
 ### e. PUSH(S,8)			
 ![image](https://github.com/user-attachments/assets/714bcad1-3bb2-4ae1-9790-470569b796bb)
 
-### f. POP(S)
+### f. POP(S)		
+![image](https://github.com/user-attachments/assets/289dc0f4-79a2-459c-8d50-dce16862f670)
 
 ## 2) Begin with an Initially empty queue of size 6:
+![image](https://github.com/user-attachments/assets/e11d9282-af45-4ad4-874f-9af9b576f952)
 
-### a. ENQUEUE(Q,4)
+### a. ENQUEUE(Q,4)									
+![image](https://github.com/user-attachments/assets/7c0e695f-6358-4d65-be30-bf594be999b3)
 
-### a. ENQUEUE(Q,1)
+### b. ENQUEUE(Q,1)	
+![image](https://github.com/user-attachments/assets/03aca9df-3acb-455e-89fd-b29c4ace62b1)
 
-### a. ENQUEUE(Q,3)
+### c. ENQUEUE(Q,3)	
+![image](https://github.com/user-attachments/assets/0be42f4e-01a3-4d38-8450-093f1186e527)
 
-### a. DEQUEUE(Q)
+### d. DEQUEUE(Q)	
+![image](https://github.com/user-attachments/assets/fd973513-d1bd-451d-998b-75eb51e3b25a)
 
-### a. ENQUEUE(Q,8)
+### e. ENQUEUE(Q,8)
+![image](https://github.com/user-attachments/assets/51b86f11-d790-47e8-ae10-1e1768be1584)
 
-### a. ENQUEUE(Q)
+### f.DEQUEUE(Q)
+![image](https://github.com/user-attachments/assets/33c1b390-4184-4c2d-9c3a-21b368dcd940)
 
-### a. ENQUEUE(Q,4)
 
 ## 3) Rewrite ENQUEUE and DEQUEUE to detect underflow and overflow of a queue
 
