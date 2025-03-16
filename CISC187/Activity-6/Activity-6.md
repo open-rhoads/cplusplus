@@ -1,5 +1,6 @@
 # Stacks and Queues
-
+## Assignment Video
+Here is my video explaining this assignment:
 ## 1) Begin with an Initially empty stack S of size 6:					
 ![image](https://github.com/user-attachments/assets/34401fab-3f33-419d-b14d-f9a21e28bf93)
 
@@ -44,6 +45,28 @@
 
 
 ## 3) Rewrite ENQUEUE and DEQUEUE to detect underflow and overflow of a queue
-
+### Underflow
+Underflow occurs when the queue is already empty (meaning that Q.head == Q.tail == 1). We can account for this by checking for this condition and throwing an error with a message if it occurs. Otherwise, we dequeue:
+```pseudocode
+if Q.head == Q.tail 
+  error "underflow"
+else
+  x = Q[Q.head]
+  if Q.head == Q.length
+      Q.head = 1
+  else Q.head = Q.head + 1
+  return x
+```
+### Overflow
+Overflow occurs when the queue is already full (meaning that Q.head == Q.tail + 1). We can account for this by checking for this condition and throwing an error with a message if it occurs. Otherwise, we enqueue:
+```pesudocode
+if Q.head == Q.tail + 1 
+  error "overflow"
+else
+  Q[Q.tail] = x
+  if Q.tail == Q.length
+      Q.tail = 1
+  else Q.tail = Q.tail + 1
+```
 ## 4) 
 A stack allows insertion and deletion of elements at only end, and a queue allows insertion at one end and deletion at the other end, a deque (double-ended queue) allows insertion and deletion at both ends. Write four O(1) -time procedures to insert elements into and delete elements from both ends of a deque implemented by an array.
