@@ -69,4 +69,35 @@ else
   else Q.tail = Q.tail + 1
 ```
 ## 4) 
-A stack allows insertion and deletion of elements at only end, and a queue allows insertion at one end and deletion at the other end, a deque (double-ended queue) allows insertion and deletion at both ends. Write four O(1) -time procedures to insert elements into and delete elements from both ends of a deque implemented by an array.
+Because a deque (double-ended queue) allows insertion and deletion at both ends. We can write four O(1)-time procedures to insert elements into and delete elements from both ends of a deque implemented by an array:
+### Pseudocode of PUSH_BACK(DQ,x) (same as Enqueue for Queue)
+```
+Q[Q.tail] = x // set value at tail equal to passed number
+if Q.tail == Q.length // if the tail is equal to the length, set tail equal to 1 (first element)
+    Q.tail = 1
+else Q.tail = Q.tail + 1 / otherwise, increment the tail/moves up one (element added to the back)
+```
+### Pseudocode of PUSH_FRONT(DQ,x)
+```
+Q[Q.head] = x // set value at head equal to passed number
+if Q.head == Q.length // if the head is equal to the length, set head equal to 1 (first element)
+    Q.head = 1
+else Q.head = Q.head - 1 // decrement head/moves back one (element added to the front)
+```
+### Pseudocode of POP_BACK(DQ)
+```
+x = Q[Q.tail] // store the tail value in variable
+if Q.tail == Q.length // if the tail is equal to the length, set tail equal to 1 (first element)
+    Q.tail = 1
+else Q.tail = Q.tail - 1 // decrement tail/moves back one (back element removed from DQ)
+return x // return the previous tail number
+```
+### Pseudocode of POP_FRONT(DQ) (Same as Dequeue for Queue)
+```
+x = Q[Q.head] // store the head value in variable
+if Q.head == Q.length // if the head is equal to the length, set head equal to 1 (first element)
+    Q.head = 1
+else Q.head = Q.head + 1 // increment head/moves up one (front element removed from DQ)
+return x // return the previous head number
+```
+
