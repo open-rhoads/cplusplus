@@ -2,7 +2,7 @@
 The following is a simple Linked List implementation in C++.
 
 ## Assignment Video
-Here is my video explaining this assignment:
+Here is my video explaining this assignment: https://youtu.be/06NjkH7F0Pg 
 
 ```c++
 //  main.cpp
