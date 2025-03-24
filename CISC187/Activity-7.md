@@ -39,7 +39,7 @@ void deleteNode(Node** head) {
     if (*head == nullptr) return; // return/end if head is nullptr - no Nodes left
     Node* temp = *head; // assign the current head pointer in a temp variable
     *head = (*head)->next; // make the new head pointer equal to the current head pointer's next property (the second item in list)
-    delete temp; // deelete the old head/temporary variable to avoid memory issues
+    delete temp; // delete the old head/temporary variable to avoid memory issues
 }
 
 int main() {
@@ -52,7 +52,7 @@ int main() {
     push(&head, 1.4);
     push(&head, 1.5);
 
-    cout << "My iitial Linked List: ";
+    cout << "My initial Linked List: ";
     printList(head);
 
     // Delete nodes at the start by calling the deleteNode function and passing the address of the head
@@ -64,5 +64,4 @@ int main() {
     cout << "My Linked list after deleting another node: ";
     printList(head);
 }
-
 ```
