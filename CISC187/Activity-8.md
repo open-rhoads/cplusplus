@@ -7,7 +7,7 @@ If we have an empty binary search tree and insert the following sequence of numb
 ![image](https://github.com/user-attachments/assets/9a10a1d2-928d-4f06-b64a-70fc23559574)
 
 ## Number 2
-
+If a well-balanced binary search tree contains 1,000 values, then the maximum number of steps it could take to search for a value within it would be log(1000) = 3.
 ## Number 3
 
 ## Number 4
