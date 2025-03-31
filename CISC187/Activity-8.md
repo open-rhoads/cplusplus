@@ -1,5 +1,5 @@
 # Binary Search Tree
-This project demonstrates
+This project demonstrates a simple Binary Search Tree.
 ## Assignment Video
 Here is my video explaining this assignment: 
 ## Number 1
