@@ -1,7 +1,7 @@
 # Binary Heaps
 
 ## Assignment Video
-The following is a video explanation of the assignemnt - https://youtu.be/yTM3DIgFTKc 
+The following is a video explanation of the assignment - https://youtu.be/yTM3DIgFTKc 
 
 ## Number 1
 Draw what the following heap would look like after we insert the value 11 into it:
