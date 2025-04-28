@@ -5,7 +5,7 @@ The following is a simple Graph implementation with BFS & DFS algorithms in C++.
 Here is my video explaining this assignment:
 
 ## Number 1 - Sample Graph
-![image](https://github.com/user-attachments/assets/7a591494-e266-493f-ab9a-c80fd03d2660)
+![image](https://github.com/user-attachments/assets/d6b82a77-6bb2-47b0-9b7e-b654db2a80e6)
 
 
 ## Number 2 - Graph Implementation w/ BFS & DFS
@@ -90,13 +90,19 @@ void DFS(Graph& graph, int start) { // accepts params of reference to graph and 
 }
 
 int main() {
-    Graph graph(5); // create the empty graph
+    Graph graph(10); // create the empty graph
     // use the connect method add all the connections & build the graph
-    graph.connect(0, 1);
-    graph.connect(0, 2);
-    graph.connect(1, 3);
-    graph.connect(2, 3);
+    graph.connect(2, 5);
     graph.connect(2, 4);
+    graph.connect(5, 4);
+    graph.connect(5, 8);
+    graph.connect(5, 1);
+    graph.connect(8, 9);
+    graph.connect(4, 7);
+    graph.connect(7, 3);
+    graph.connect(7, 0);
+    graph.connect(3, 0);
+    graph.connect(3, 6);
     
     // output the graph
     cout << "Graph representation:" << endl;
@@ -104,11 +110,11 @@ int main() {
     
     // display BFS
     cout << "BFS starting from node 0:" << endl;
-    BFS(graph, 0);
+    BFS(graph, 2);
     
     // display DFS
     cout << "DFS starting from node 0:" << endl;
-    DFS(graph, 0);
+    DFS(graph, 2);
 }
 ```
 ## Number 3 - Big O Efficiency Comparison of BFS & DFS
