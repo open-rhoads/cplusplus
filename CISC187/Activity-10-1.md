@@ -138,7 +138,7 @@ Program ended with exit code: 0
 ```
 
 ## Number 3 - Big O Efficiency Comparison of BFS & DFS
-Both algorithms process each Vertex(V) and Edge(E) once. Therefore, their time complexity is O(V+E). 
-Both algorithms must store each Vertex(V) in a queue or stack. Therefore, their space requirement is O(V). 
+Both algorithms process each Vertex(V) and Edge(E). Therefore, their time complexity is O(V+E). 
+Both algorithms must store each Vertex(V) in a queue or stack. Therefore, their space requirement is O(V). The overall efficiency reduces to O(V+E) as numbers grow large.
 
 Although both algorithms have the same efficiency; their unique designs make them useful in different circumstances. BFS is more useful when you need to find the shortest path and DFS is helpful for exploring all paths and finding cycle patterns.
