@@ -111,4 +111,4 @@ int main() {
 }
 ```
 ## Number 3 - Big O Efficiency Comparison of BFS & DFS
-Both algorithms process each Vertex(V) and Edge(E) once. Therefore, their time complexity is O(V+E). Both algorithms must store each Vertex(V) in a queue or stack/ Therefore, therir space requirement is O(V).
+Both algorithms process each Vertex(V) and Edge(E) once. Therefore, their time complexity is O(V+E). Both algorithms must store each Vertex(V) in a queue or stack. Therefore, their space requirement is O(V).
