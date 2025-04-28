@@ -5,6 +5,7 @@ The following is a simple Graph implementation with BFS & DFS algorithms in C++.
 Here is my video explaining this assignment:
 
 ## Number 1 - Sample Graph
+![image](https://github.com/user-attachments/assets/7a591494-e266-493f-ab9a-c80fd03d2660)
 
 
 ## Number 2 - Graph Implementation w/ BFS & DFS
@@ -111,4 +112,4 @@ int main() {
 }
 ```
 ## Number 3 - Big O Efficiency Comparison of BFS & DFS
-Both algorithms process each Vertex(V) and Edge(E) once. Therefore, their time complexity is O(V+E). Both algorithms must store each Vertex(V) in a queue or stack. Therefore, their space requirement is O(V).
+Both algorithms process each Vertex(V) and Edge(E) once. Therefore, their time complexity is O(V+E). Both algorithms must store each Vertex(V) in a queue or stack. Therefore, their space requirement is O(V). Although both algorithms have the same efficiency; their unique designs make them useful in different circumstances. BFS is more useful when you need to find the shortest path and DFS is helpful for exploring all paths and finding cycle patterns.
