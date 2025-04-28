@@ -2,7 +2,7 @@
 The following is a simple Graph implementation with BFS & DFS algorithms in C++.
 
 ## Assignment Video
-Here is my video explaining this assignment:
+Here is my video explaining this assignment: https://youtu.be/wsNtHYQtc34
 
 ## Number 1 - Sample Graph
 ![image](https://github.com/user-attachments/assets/d6b82a77-6bb2-47b0-9b7e-b654db2a80e6)
@@ -43,7 +43,9 @@ public:
         }
     }
 };
-
+/*
+The queue follows the First-In-First-Out principle, ensuring that nodes are explored in the order they were discovered. Ensures all nodes at the current level are explored before moving to the next level.
+*/
 // Breadth-First Search (BFS)
 void BFS(Graph& graph, int start) { // accepts params of reference to graph and start int
     vector<bool> visited(graph.adjacent_list.size(), false); // creates a bool vector the same size as the primary level adjacent_list
@@ -64,7 +66,9 @@ void BFS(Graph& graph, int start) { // accepts params of reference to graph and 
     }
     cout << endl;
 }
-
+/*
+The stack follows the Last-In-First-Out principle, ensuring that the most recently discovered node is explored first. Allows DFS to delve deep into the graph path before backtracking.
+*/
 // Depth-First Search (DFS)
 void DFS(Graph& graph, int start) { // accepts params of reference to graph and start int
     vector<bool> visited(graph.adjacent_list.size(), false); // creates a bool vector the same size as the primary level adjacent_list
