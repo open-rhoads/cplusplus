@@ -117,6 +117,7 @@ int main() {
     DFS(graph, 2);
 }
 ```
+```
 Console Output: 
 Graph representation:
 Node 0: 7 3 
@@ -134,6 +135,7 @@ BFS starting from node 0:
 DFS starting from node 0:
 2 4 7 0 3 6 5 1 8 9 
 Program ended with exit code: 0
+```
 
 ## Number 3 - Big O Efficiency Comparison of BFS & DFS
 Both algorithms process each Vertex(V) and Edge(E) once. Therefore, their time complexity is O(V+E). Both algorithms must store each Vertex(V) in a queue or stack. Therefore, their space requirement is O(V). Although both algorithms have the same efficiency; their unique designs make them useful in different circumstances. BFS is more useful when you need to find the shortest path and DFS is helpful for exploring all paths and finding cycle patterns.
