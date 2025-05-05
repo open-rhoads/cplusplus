@@ -23,6 +23,7 @@ def factorial(n)
     return n * factorial(n - 2)
 end
 ```
+This error makes it so that the base case will never occur; because when we start with 10 for the value of n and the recursive function is calling itself and subtracting 2 from n each time, it will skip over 1 and go to 0. Therefore, the line ```return 1 if n == 1``` never occurs and it will be an infinite loop.
 ## Number 3
 The following function accepts two numbers called low and high and returns the sum of all the numbers from low to high. However, our code is missing the base case, and will run indefinitely! Fix the code by adding the correct base case:
 ```python
