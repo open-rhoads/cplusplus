@@ -63,64 +63,63 @@ array=[ 1,
 #include <iostream>
 #include <vector>
 
-// Define a custom type to hold either an integer or a vector of itself
+using namespace std;
+
+// Define a custom structure to hold either an integer or another vector of its own type
 struct MultiDimArray {
-    bool isInt; // Flag to indicate if the element is an integer
-    int intValue; // Holds the integer value if isInt is true
-    std::vector<MultiDimArray> vecValue; // Holds the vector if isInt is false
+    bool is_int; // Bool flag to indicate if the element is an integer
+    int int_value; // Holds the integer value if isInt is true
+    vector<MultiDimArray> vec_value; // Holds the vector if isInt is false
 
-    // Constructor for integer type
-    MultiDimArray(int value) : isInt(true), intValue(value) {}
+    // Constructor for integer type - accepts the int value, sets is_int to true and sets the int_value member
+    MultiDimArray(int value) : is_int(true), int_value(value) {}
 
-    // Constructor for vector type
-    MultiDimArray(std::vector<MultiDimArray> value) : isInt(false), vecValue(value) {}
+    // Constructor for vector type - accepts the vector value, sets is_int to false, annd sets the vec_value member
+    MultiDimArray(vector<MultiDimArray> value) : is_int(false), vec_value(value) {}
 };
 
-void processArray(const MultiDimArray& array, int depth = 0) {
+// function to process and output the custom structure type that is passed (which holds the array)
+void process_array(const MultiDimArray& array, int depth = 0) {
     // Print the current depth
-    std::cout << "Depth: " << depth << std::endl;
-
-    if (array.isInt) {
-        // If it's an integer, process it (e.g., print it)
-        std::cout << array.intValue << " ";
-    } else {
-        // If it's a vector, recursively process each element
-        for (const auto& element : array.vecValue) {
-            processArray(element, depth + 1);
+    cout << "Depth: " << depth << endl;
+    if (array.is_int) { // If it's an integer, process it (e.g., print it)
+        cout << array.int_value << " ";
+    } else { // If it's a vector, loop through each element in the vector and recursively process each one - uses auto ref variable to handle differing data types
+        for (const auto& element : array.vec_value) {
+            process_array(element, depth + 1); // call the same function to process the nested vector/array
         }
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 int main() {
-    // Example multi-dimensional array
+    // Construct the multi-dimensional array by instantiating the custom structure repeatedly and passing either integer or a vector of the same custom type
     MultiDimArray array = MultiDimArray({
         MultiDimArray(1),
         MultiDimArray(2),
         MultiDimArray(3),
-        MultiDimArray(std::vector<MultiDimArray>{MultiDimArray(4), MultiDimArray(5), MultiDimArray(6)}),
+        MultiDimArray(vector<MultiDimArray>{MultiDimArray(4), MultiDimArray(5), MultiDimArray(6)}),
         MultiDimArray(7),
-        MultiDimArray(std::vector<MultiDimArray>{
+        MultiDimArray(vector<MultiDimArray>{
             MultiDimArray(8),
-            MultiDimArray(std::vector<MultiDimArray>{
+            MultiDimArray(vector<MultiDimArray>{
                 MultiDimArray(9), MultiDimArray(10), MultiDimArray(11),
-                MultiDimArray(std::vector<MultiDimArray>{MultiDimArray(12), MultiDimArray(13), MultiDimArray(14)})
+                MultiDimArray(vector<MultiDimArray>{MultiDimArray(12), MultiDimArray(13), MultiDimArray(14)})
             })
         }),
-        MultiDimArray(std::vector<MultiDimArray>{
+        MultiDimArray(vector<MultiDimArray>{
             MultiDimArray(15), MultiDimArray(16), MultiDimArray(17), MultiDimArray(18), MultiDimArray(19),
-            MultiDimArray(std::vector<MultiDimArray>{
+            MultiDimArray(vector<MultiDimArray>{
                 MultiDimArray(20), MultiDimArray(21), MultiDimArray(22),
-                MultiDimArray(std::vector<MultiDimArray>{
+                MultiDimArray(vector<MultiDimArray>{
                     MultiDimArray(23), MultiDimArray(24), MultiDimArray(25),
-                    MultiDimArray(std::vector<MultiDimArray>{MultiDimArray(26), MultiDimArray(27), MultiDimArray(29)})
+                    MultiDimArray(vector<MultiDimArray>{MultiDimArray(26), MultiDimArray(27), MultiDimArray(29)})
                 }), MultiDimArray(30), MultiDimArray(31)
             }), MultiDimArray(32)
         }), MultiDimArray(33)
     });
 
-    // Process the array
-    processArray(array);
+    // Process the array by calling the function
+    process_array(array);
 }
-
 ```
