@@ -32,6 +32,7 @@ function reverse(array) {
 **The above algorithm has a space complexity of O(N) because it also creates a new array in which to store the reversed array**
 ## Number 3
 Create a new function to reverse an array that takes up just O(1) extra space.
+
 **Instead of using a new array, we can modify the original array as follows:**
 ```javascript
 function reverse(array) {
