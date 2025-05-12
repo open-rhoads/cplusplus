@@ -1,7 +1,7 @@
 # Space Constraints
 The following exercises demonstrate the complexities involved with space constraints.
 ## Assignment Video
-Here is my video explaining this assignment:
+Here is my video explaining this assignment: https://youtu.be/rS8Qw2tEDkI
 ## Number 1
 Describe the space complexity of the 'Word Builder' algorithm in terms of Big O:
 ```javascript
