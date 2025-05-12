@@ -29,6 +29,9 @@ function reverse(array) {
 		return newArray;
 }
 ```
+**The above algorithm has a space complexity of O(N) because it also creates a new array in which to store the reversed array**
+## Number 3
+Create a new function to reverse an array that takes up just O(1) extra space.
 **Instead of using a new array, we can modify the original array as follows:**
 ```javascript
 function reverse(array) {
@@ -39,20 +42,6 @@ function reverse(array) {
     }
     return array;
 }
-
-```
-**The above algorithm has a space complexity of O(N) because it also creates a new array in which to store the reversed array**
-## Number 3
-Create a new function to reverse an array that takes up just O(1) extra space.
-```javascript
-function reverse(array) { 
-		for (let i = array.length - 1; i >= 0; i--) { // loop through the array from back to front
-			
-				// array.push(array[i]);
-		}
-		return array;
-}
-```
 **The above function will take only O(1) space complexity because instead of creating a new array in which to store the reversed array,**
 ## Number 4
 Fill in the table that follows to describe the efficiency of a function that accepts an array of numbers and returns an array containing those numbers multiplied by 2 in terms of both time and space:
