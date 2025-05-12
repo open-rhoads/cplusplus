@@ -101,8 +101,8 @@ function doubleArray3(array, index=0) {
     </tr>
     <tr>
 	<td>2</td>
-	<td></td>
-	<td></td>
+	<td>O(N)</td>
+	<td>O(1)</td>
     </tr>
     <tr>
 	<td>3</td>
