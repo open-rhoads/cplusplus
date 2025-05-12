@@ -43,7 +43,8 @@ function reverse(array) {
     }
     return array;
 }
-**The above function will take only O(1) space complexity because instead of creating a new array in which to store the reversed array,**
+```
+**The above function will take only O(1) space complexity because instead of creating a new array in which to store the reversed array, it uses the original array to swap the elements in the same original memory allocated for the array.**
 ## Number 4
 Fill in the table that follows to describe the efficiency of a function that accepts an array of numbers and returns an array containing those numbers multiplied by 2 in terms of both time and space:
 ### Example 1
