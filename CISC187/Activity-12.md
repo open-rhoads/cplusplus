@@ -80,8 +80,8 @@ function doubleArray2(array) {
 ```javascript
 function doubleArray3(array, index=0) { 
 	if (index >= array.length) { return; }
-  array[index] *= 2;
-  doubleArray3(array, index + 1);
+	array[index] *= 2;
+	doubleArray3(array, index + 1);
 	return array; 
 }
 ```
@@ -95,16 +95,19 @@ function doubleArray3(array, index=0) {
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td></td>
+	<td>1</td>
+	<td>O(N)</td>
+	<td>O(N)</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td></td>
+	<td>2</td>
+	<td></td>
+	<td></td>
     </tr>
     <tr>
-      <td>3</td>
-      <td></td>
+	<td>3</td>
+	<td></td>
+	<td></td>
     </tr>
   </tbody>
 </table>
