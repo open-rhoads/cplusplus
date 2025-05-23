@@ -1,9 +1,6 @@
 ## CISC 187 Final Project
 ### Task 1
 ```c++
-//  main.cpp
-//  CISC187_final
-
 #include <iostream>
 #include <vector>
 #include <unordered_set>
@@ -11,7 +8,6 @@
 
 using namespace std;
 
-// TASK 1
 // define a custom Player stucture with 3 members to store first/last name & team
 struct Player {
     string f_name;
@@ -71,7 +67,31 @@ int main() {
 }
 ```
 ### Task 2
+```c++
+#include <iostream>
+#include <vector>
+#include <unordered_set>
 
+using namespace std;
+
+int find_missing_number(const vector<int>& nums) { // accepts a vector of integers by reference
+    unordered_set<int> numSet(nums.begin(), nums.end()); // use of range constructor to initialize the set with all the elements from the nums vector
+    for (int i = 0; i <= nums.size(); ++i) { // loop through the nums vector, start at 0 and include last number to get ALL (i.e. 0-6)
+        if (numSet.find(i) == numSet.end()) { // search for each value in the numSet unordered set... if it's equal to the end, it means it was not found and therefore, i is the missing number.
+            return i;
+        }
+    }
+    return -1; // Should never happen if there is always a missing number
+}
+
+int main() {
+    vector<int> nums1 = {2, 3, 0, 6, 1, 5};
+    vector<int> nums2 = {8, 2, 3, 9, 4, 7, 5, 0, 6};
+    cout << "Find the Missing Number\n";
+    cout << "Missing number in nums1: " << find_missing_number(nums1) << endl;
+    cout << "Missing number in nums2: " << find_missing_number(nums2) << endl;
+}
+```
 ### Task 3
 
 ### Task 4
