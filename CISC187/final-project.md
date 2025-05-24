@@ -93,7 +93,49 @@ int main() {
 }
 ```
 ### Task 3
+```c++
+//  main.cpp
+//  CISC187_final_task3
 
+#include <iostream>
+#include <vector>
+#include <stack>
+#include <algorithm>
+
+using namespace std;
+
+int get_max_profit(const vector<int>& prices) {
+    if (prices.empty()) return 0;
+
+    stack<int> buy_stack;
+    int max_profit = 0;
+
+    for (int price : prices) {
+        if (buy_stack.empty() || price < buy_stack.top()) {
+            buy_stack.push(price);
+        } else {
+            int profit = price - buy_stack.top();
+            max_profit = max(max_profit, profit);
+        }
+    }
+
+    return max_profit;
+}
+
+int main() {
+    vector<int> prices = {10, 7, 5, 8, 11, 2, 6};
+    cout << "Maximum Profit (with stack): $" << get_max_profit(prices) << endl;
+
+}
+
+```
 ### Task 4
+```c++
+```
 
 ### Task 5
+```c++
+```
+### Task 6
+```c++
+```
