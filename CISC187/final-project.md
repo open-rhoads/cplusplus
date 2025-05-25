@@ -187,47 +187,41 @@ int main() {
 ```c++
 #include <iostream>
 #include <vector>
-#include <queue>
-#include <algorithm>
+#include <iomanip>
 
 using namespace std;
 
-int maxProductWithHeaps(const std::vector<int>& nums) {
-    if (nums.size() < 2) {
-        throw std::invalid_argument("Array must contain at least two numbers.");
+void sort_temps(vector<float>& temps) {
+    const int rangeSize = 21; // From 97.0 to 99.0 inclusive, in 0.1 steps
+    const float base = 97.0;
+    vector<int> count(rangeSize, 0);
+
+    // Count occurrences
+    for (float temp : temps) {
+        int index = static_cast<int>((temp - base) * 10 + 0.5); // +0.5 for rounding
+        count[index]++;
     }
 
-    std::priority_queue<int, std::vector<int>, std::greater<int>> maxHeap; // min-heap for largest
-    std::priority_queue<int> minHeap; // max-heap for smallest
-
-    for (int num : nums) {
-        // Track two largest
-        maxHeap.push(num);
-        if (maxHeap.size() > 2) maxHeap.pop();
-
-        // Track two smallest
-        minHeap.push(-num);
-        if (minHeap.size() > 2) minHeap.pop();
+    // Reconstruct the sorted array
+    int pos = 0;
+    for (int i = 0; i < rangeSize; ++i) {
+        float value = base + i * 0.1f;
+        for (int j = 0; j < count[i]; ++j) {
+            temps[pos++] = value;
+        }
     }
-
-    int max1 = maxHeap.top(); maxHeap.pop();
-    int max2 = maxHeap.top();
-
-    int min1 = -minHeap.top(); minHeap.pop();
-    int min2 = -minHeap.top();
-
-    return std::max(max1 * max2, min1 * min2);
 }
 
 int main() {
-    vector<int> nums = {5, -10, -6, 9, 4};
+    vector<float> temperatures = {98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1};
 
-    try {
-        int result = maxProductWithHeaps(nums);
-        cout << "Maximum product of two numbers: " << result << std::endl;
-    } catch (const std::exception& e) {
-        cerr << "Error: " << e.what() << std::endl;
+    sort_temps(temperatures);
+
+    cout << "Sorted temperatures:\n";
+    for (float temp : temperatures) {
+        cout << fixed << setprecision(1) << temp << " ";
     }
+    cout << endl;
 }
 ```
 ### Task 6
