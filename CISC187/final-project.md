@@ -125,13 +125,148 @@ int main() {
 ```
 ### Task 4
 ```c++
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
 
+using namespace std;
+
+// Function to compute the maximum product of any two numbers using heaps
+int max_product_two_ints(const vector<int>& nums) { // function accepts a vector of integers by reference
+    if (nums.size() < 2) { // throw an error if there are not at least two ints
+        throw invalid_argument("Array must contain at least two numbers.");
+    }
+
+    // Min-heap to track the two largest numbers - create one by telling it to prioritize smaller values with greater
+    priority_queue<int, vector<int>, greater<int>> two_largest;
+
+    // Track two smallest using a max-heap (default behavior)
+    std::priority_queue<int> two_smallest;
+
+
+
+    for (int num : nums) { // loop through the nums
+        // Track the two largest numbers
+        two_largest.push(num); // push the num to the min-heap
+        if (two_largest.size() > 2) { // if it has more than two nums now
+            two_largest.pop();  // pop the smallest off the top to keep only the top 2 largest
+        }
+
+        // Track two smallest numbers using max-heap behavior by storing negative values
+        two_smallest.push(num);
+        if (two_smallest.size() > 2) {
+            two_smallest.pop(); // remove the largest numbers if more than 3
+        }
+    }
+
+    // Extract the two largest numbers from min heap
+    int largest1 = two_largest.top(); two_largest.pop();
+    int largest2 = two_largest.top();
+
+    // Extract the two smallest numbers from max heap (negate back to get original smallest values)
+    int smallest1 = -two_smallest.top(); two_smallest.pop();
+    int smallest2 = -two_smallest.top();
+
+    // Return the maximum product between the two largest and two smallest numbers
+    return max(largest1 * largest2, smallest1 * smallest2);
+}
+
+int main() {
+    vector<int> nums = {5, -10, -6, 9, 4};
+
+    try {
+        int result = max_product_two_ints(nums);
+        cout << "Maximum product of two numbers: " << result << endl;
+    } catch (const exception& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+}
 ```
 ### Task 5
 ```c++
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
 
+using namespace std;
+
+int maxProductWithHeaps(const std::vector<int>& nums) {
+    if (nums.size() < 2) {
+        throw std::invalid_argument("Array must contain at least two numbers.");
+    }
+
+    std::priority_queue<int, std::vector<int>, std::greater<int>> maxHeap; // min-heap for largest
+    std::priority_queue<int> minHeap; // max-heap for smallest
+
+    for (int num : nums) {
+        // Track two largest
+        maxHeap.push(num);
+        if (maxHeap.size() > 2) maxHeap.pop();
+
+        // Track two smallest
+        minHeap.push(-num);
+        if (minHeap.size() > 2) minHeap.pop();
+    }
+
+    int max1 = maxHeap.top(); maxHeap.pop();
+    int max2 = maxHeap.top();
+
+    int min1 = -minHeap.top(); minHeap.pop();
+    int min2 = -minHeap.top();
+
+    return std::max(max1 * max2, min1 * min2);
+}
+
+int main() {
+    vector<int> nums = {5, -10, -6, 9, 4};
+
+    try {
+        int result = maxProductWithHeaps(nums);
+        cout << "Maximum product of two numbers: " << result << std::endl;
+    } catch (const std::exception& e) {
+        cerr << "Error: " << e.what() << std::endl;
+    }
+}
 ```
 ### Task 6
 ```c++
+#include <iostream>
+#include <vector>
+#include <unordered_set>
 
+using namespace std;
+
+int longestConsecutiveSequence(const vector<int>& nums) {
+    unordered_set<int> numSet(nums.begin(), nums.end());
+    int longest = 0;
+
+    for (int num : numSet) {
+        // Only start counting if it's the beginning of a sequence
+        if (numSet.find(num - 1) == numSet.end()) {
+            int currentNum = num;
+            int currentStreak = 1;
+
+            while (numSet.find(currentNum + 1) != numSet.end()) {
+                currentNum++;
+                currentStreak++;
+            }
+
+            longest = max(longest, currentStreak);
+        }
+    }
+
+    return longest;
+}
+
+int main() {
+    vector<int> arr1 = {10, 5, 12, 3, 55, 30, 4, 11, 2};
+    vector<int> arr2 = {19, 13, 15, 12, 18, 14, 17, 11};
+
+    cout << "Longest sequence length (arr1): " << longestConsecutiveSequence(arr1) << endl;
+    cout << "Longest sequence length (arr2): " << longestConsecutiveSequence(arr2) << endl;
+
+    return 0;
+}
 ```
