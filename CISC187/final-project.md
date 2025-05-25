@@ -94,9 +94,6 @@ int main() {
 ```
 ### Task 3
 ```c++
-//  main.cpp
-//  CISC187_final_task3
-
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -104,38 +101,37 @@ int main() {
 
 using namespace std;
 
-int get_max_profit(const vector<int>& prices) {
-    if (prices.empty()) return 0;
+int get_max_profit(const vector<int>& prices) { // function accepts a vector of stock prices by reference
+    if (prices.empty()) return 0; // return if the vector is empty
 
-    stack<int> buy_stack;
-    int max_profit = 0;
+    stack<int> buy_stack; // create a stack of integers to track the lowest price
+    int max_profit = 0; // set the max profit equal to 0
 
-    for (int price : prices) {
-        if (buy_stack.empty() || price < buy_stack.top()) {
-            buy_stack.push(price);
-        } else {
-            int profit = price - buy_stack.top();
-            max_profit = max(max_profit, profit);
+    for (int price : prices) { // loop through the vector of stock prices
+        if (buy_stack.empty() || price < buy_stack.top()) { // if there is nothing in the stack OR if the current price is lower than the top of the stack, push the price to the top of the stack
+            buy_stack.push(price); // therefore, the stack will have the lowest price on top
+        } else { // if the current price is not the lowest so far, calculate potential profit with the current lowest price
+            int profit = price - buy_stack.top(); // subtract the current lowest price from the current price to calc profit
+            max_profit = max(max_profit, profit); // set max profit to the profit value, IF higher than the current max
         }
     }
-
-    return max_profit;
+    return max_profit; // return the max
 }
 
 int main() {
     vector<int> prices = {10, 7, 5, 8, 11, 2, 6};
-    cout << "Maximum Profit (with stack): $" << get_max_profit(prices) << endl;
-
+    cout << "Maximum Profit: $" << get_max_profit(prices) << endl;
 }
-
 ```
 ### Task 4
 ```c++
-```
 
+```
 ### Task 5
 ```c++
+
 ```
 ### Task 6
 ```c++
+
 ```
