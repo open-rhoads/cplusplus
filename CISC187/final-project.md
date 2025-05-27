@@ -233,25 +233,23 @@ int main() {
 
 using namespace std;
 
-int longestConsecutiveSequence(const vector<int>& nums) {
-    unordered_set<int> numSet(nums.begin(), nums.end());
-    int longest = 0;
+int longest_sequence(const vector<int>& nums) { // function accepts a vector of ints by reference
+    unordered_set<int> num_set(nums.begin(), nums.end()); // create an unordered set of ints that contains each number in the vector
+    int longest = 0; // define longest and initialize to 0
 
-    for (int num : numSet) {
-        // Only start counting if it's the beginning of a sequence
-        if (numSet.find(num - 1) == numSet.end()) {
-            int currentNum = num;
-            int currentStreak = 1;
+    for (int num : num_set) { // loop through the nums in set
+        // if the number before the current one is not in the set, this might be a new sequence, so start counting
+        if (num_set.find(num - 1) == num_set.end()) {
+            int current_num = num; // store the curret num
+            int current_streak = 1; // set streak to 1
 
-            while (numSet.find(currentNum + 1) != numSet.end()) {
-                currentNum++;
-                currentStreak++;
+            while (num_set.find(current_num + 1) != num_set.end()) { // as long as the next number after num in sequence is not the end (i.e. it exists in the set)
+                current_num++; // increment the current num
+                current_streak++; // and increment the current streak
             }
-
-            longest = max(longest, currentStreak);
+            longest = max(longest, current_streak); // set the longest streak using max function
         }
     }
-
     return longest;
 }
 
@@ -259,9 +257,7 @@ int main() {
     vector<int> arr1 = {10, 5, 12, 3, 55, 30, 4, 11, 2};
     vector<int> arr2 = {19, 13, 15, 12, 18, 14, 17, 11};
 
-    cout << "Longest sequence length (arr1): " << longestConsecutiveSequence(arr1) << endl;
-    cout << "Longest sequence length (arr2): " << longestConsecutiveSequence(arr2) << endl;
-
-    return 0;
+    cout << "Longest sequence length (arr1): " << longest_sequence(arr1) << endl;
+    cout << "Longest sequence length (arr2): " << longest_sequence(arr2) << endl;
 }
 ```
