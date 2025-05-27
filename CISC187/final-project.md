@@ -191,34 +191,35 @@ int main() {
 
 using namespace std;
 
-void sort_temps(vector<float>& temps) {
-    const int rangeSize = 21; // From 97.0 to 99.0 inclusive, in 0.1 steps
-    const float base = 97.0;
-    vector<int> count(rangeSize, 0);
+void sort_temps(vector<float>& temps) { // function accepts a vector of temps by reference
+    const int range = 21; // We have a known range from 97.0 to 99.0 inclusive (in 0.1 increments) - this makes count sort approach more efficient
+    const float base = 97.0; // define the starting value
+    vector<int> count(range, 0); // create a vector of ints of the range size and initialize values to 0
 
     // Count occurrences
-    for (float temp : temps) {
-        int index = static_cast<int>((temp - base) * 10 + 0.5); // +0.5 for rounding
-        count[index]++;
+    for (float temp : temps) { // loop through the temps
+        int index = static_cast<int>((temp - base) * 10 + 0.5); // map the temp to an index by subtracting from lowest possible, multiplying by 10, and then adding 0.5 and static casting to get nearest int and avoid floating point error
+        count[index]++; // increment the value in count vector at the corresponding index (will add one every time this temp is found)
     }
 
     // Reconstruct the sorted array
     int pos = 0;
-    for (int i = 0; i < rangeSize; ++i) {
-        float value = base + i * 0.1f;
-        for (int j = 0; j < count[i]; ++j) {
-            temps[pos++] = value;
+    for (int i = 0; i < range; ++i) { // loop through each possible index value in range
+        float value = base + i * 0.1f; // convery temp back into its floating point full value
+        for (int j = 0; j < count[i]; ++j) { // loop the number of times for the value found at each count value at each i
+            temps[pos++] = value; // write the value to the temps array (will be in sorted order) and then increment pos variable. pos tracks temps vector whereas i is always the range of indices
         }
     }
 }
 
 int main() {
-    vector<float> temperatures = {98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1};
-
-    sort_temps(temperatures);
-
+    // create vector of temps and pass to function
+    vector<float> temps = {98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1};
+    sort_temps(temps);
+    
+    // output the temps
     cout << "Sorted temperatures:\n";
-    for (float temp : temperatures) {
+    for (float temp : temps) {
         cout << fixed << setprecision(1) << temp << " ";
     }
     cout << endl;
